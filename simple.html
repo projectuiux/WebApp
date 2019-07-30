@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/lightswitch05/table-to-json/master/src/jquery.tabletojson.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js'></script>
+     
+</head>
+<body>
+  <!--------- Header ---------->
+  <div id="header" class="header">
+      <img id="logo" src="arrow-logo-white.png" class="arrowLogo">
+  </div>
+
+  <!---- Content Container contains the Search Parameter, the data table, and the "Edit" and "Save" buttons ---->
+  <div class="contentContainer">
+  
+  <!---- "popUpSaveCheck" is a pop up box that appears when you hit the "Save" button and it double checks if you would actually
+          like to save the changes made to the data table -->
+  <span id="popUpSaveCheck" class="popUpSaveCheck">
+    <h3>Are you sure you would like to save?</h3> <!-- <h3> tag displays the message in the pop up box -->
+    <div class="container-save-btns">
+      <button id="cancelBtn">Cancel</button><!-- This is the "Cancel" button in the pop up box which would cancel the changes made to the data table -->
+      <button id="saveBtn">Save</button><!-- This is the "Save" button in the pop up box which will confirm the changes made to the data table -->
+    </div>
+  </span>
+
+  <form ng-controller="userCtrl" id="simpleForm" class="searchForm">
+   <div class="container">
+    <div id="searchDiv" class="form-input-container">
+      <div id="criteria1" class="criteria">
+      
+      <span id="keySelectDiv" class="form">
+        <select name="key" class="itemList " >
+            <option value="partnerReportKey">Partner Report Key</option>
+            <option value="reportGroupType">Report Group Type</option>
+            <option value="reportFileName">Report File Name</option>
+            <option value="emailTo">Email To</option>
+            <option value="recordId">Report ID</option>
+            <option value="reportFrequency">Report Frequency</option>
+            <option value="reportTransmissionType">Report Transmission Type</option>
+            <option value="ccTo">CC To</option>
+            <option value="emailFrom">Email From</option>
+            <option value="emailSubject">Email Subject</option>
+            <option value="emailBody">Email Body</option>
+            <option value="emailServer">Email Server</option>
+            <option value="emailPort">Email Port</option>
+            <option value="ftpServer">FTP Server</option>
+            <option value="ftpUser">FTP User</option>
+            <option value="ftpPassword">FTP Password</option>
+            <option value="ftpEncodedPassword">FTP Encoded Password</option>
+            <option value="ftpPort">FTP Port</option>
+            <option value="ftp
+            Directory">FTP Directory</option>
+            <option value="enabledFlag">Enabled Flag</option>
+            <option value="disabledDate">Disabled Date</option>
+            <option value="creationDate">Creation Date</option>
+            <option value="createdBy">Created By</option>
+            <option value="lastUpdateDate">Last Update Date</option>
+            <option value="lastUpdateBy">Last Update By</option>
+            <option value="programUpdateDate">Program Update Date</option>
+            <option value="requestID">Request ID</option>
+            <option value="changeNotes">Change Notes</option>
+            <option value="businessApprover">Business Approver</option>
+            <option value="BIFolder">BI Folder</option>
+            <option value="BIPath">BI Path</option>
+            <option value="BIMainReportName">BI Main Report Name</option>
+        </select> 
+      </span>
+
+      <span id="searchValDiv" class="form"> <!-- This is the input box where the user will type a string that will be used to pull up information from the database once the user has clicked on the "Search" button -->
+
+        <input type="text" id="searchVal" class="form-button" placeholder="search for report...">
+      </span>
+      
+      <span>
+            <input id="searchButton" type="submit" value="Search" class="buttonPrimary searchButton">
+      </span>
+      <!---- "+" button is used to add a search parameter ---->
+      <span class="addDiv" ng-click="addField()"><button id="addButton" type="button" class="addButton">+</button></span> 
+      
+      </div>
+    </div>
+   </div>
+  </form>
+
+  <div id="table-scroll" class="table-scroll">
+      <div class="table-wrap">
+        <table class="main-table">
+          <thead id="thead"> <!-- Below is the list of column table names from the database -->
+            <tr>
+              <th class="fixed-side" scope="col">Report ID</th>
+              <th scope="col">Partner Report Key</th>
+              <th scope="col">Report Group Type</th>
+              <th scope="col">Report Frequency</th>
+              <th scope="col">Report Transmission Type</th>
+              <th scope="col">Report File Name</th>
+              <th scope="col">Datetime</th>
+              <th scope="col">Email To</th>
+              <th scope="col">CC To</th>
+              <th scope="col">Email From</th>
+              <th scope="col">Email Subject</th>
+              <th scope="col">Email Body</th>
+              <th scope="col">Email Server</th>
+              <th scope="col">Email Port</th>
+              <th scope="col">FTP Server</th>
+              <th scope="col">FTP User</th>
+              <th scope="col">FTP Password</th>
+              <th scope="col">FTP Encoded Password</th>
+              <th scope="col">FTP Port</th>
+              <th scope="col">FTP Directory</th>
+              <th scope="col">Enabled Flag</th>
+              <th scope="col">Disabled Date</th>
+              <th scope="col">Creation Date</th>
+              <th scope="col">Created By</th>
+              <th scope="col">Last Update Date</th>
+              <th scope="col">Last Update By</th>
+              <th scope="col">Program Update Date</th>
+              <th scope="col">Request ID</th>
+              <th scope="col">Change Notes</th>
+              <th scope="col">Business Approver</th>
+              <th scope="col">BI Folder</th>
+              <th scope="col">BI Path</th>
+              <th scope="col">BI Main Report Name</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody" class="tableBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  
+<!-- "buttonGroup/workButtons" consists of two buttons which are "Edit" and "Save" and they are below the table -->
+ <div id="workButtons" class="buttonGroup">
+  <button type="button" id="tableEditBtn" class="buttonPrimary">Edit</button>
+  <button type="button" id="tableSaveBtn" class="buttonSecondary">Save</button>
+ </div>
+ </div>
+
+<!-- Footer has been commented out because ???????.com might have a pre-built footer for the web application -->
+ <!---
+    <footer id="footer" class="footer">
+      <img id="logoFooter" src="arrow-logo-footer.png" class="footerLogo">
+    </footer>
+  -->
+ <!---
+    <footer id="footer" class="footer">
+      <img id="logoFooter" src="arrow-logo-footer.png" class="footerLogo">
+    </footer>
+  -->
+
+
+
+   <!-- javascript -->
+ <script src="simple.js"></script>
+ <script src="tableRender.js"></script>
+
+</body>
+</html>
