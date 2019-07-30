@@ -1,0 +1,267 @@
+/* header */
+
+.header {
+  background-color: black; /* This changes the color of the header */
+  padding-top: 10px; /* If you increase the px it will increase the header size and vice-versa */
+  padding-bottom: 10px; /* If you increase the px it will increase the header size and vice-versa */
+  border-bottom: 2px solid blue; /* This is the thin blue line at the very bottom of the header. Increasing the px would make the blue line thicker. */
+}
+
+.arrowLogo {
+  height: 8%;
+  width: 8%; /* The width changes the size of the Arrow logo and as well as the header size */
+  padding-top: 10px; /* Padding top and bottom allows the Arrow logo to be centered */
+  padding-bottom: 5px; /* This also helps center the Arrow logo */
+  padding-left: 70px; /* padding-left pushes the Arrow logo to the right. */
+}
+/* header ends here */
+
+/* Body, Buttons, and the Search Parameter */
+body {
+  padding: 0px; /* The padding must be kept at zero because if the px were to increase it would decrease the size of the entire page */
+  margin: 0px; /* The margin must also be kept at zero because if the px were to be increase it would also decrease the size of the web */
+  border: 0px; 
+}
+
+.buttonGroup { /* The "Edit" and "Save" button are grouped together under the class="buttonGroup" */
+  flex-direction: row; /* The flex-direction puts "Edit" and "Save" in a flex container. The flex items (Edit and Save) are displayed horizontally as a row */
+  justify-content: flex-end; /* The justify-content property aligns the flex items (Edit and Save) horizontally. flex-end positions "edit" and "save" at the end of the container */
+  display: flex; /* The flex container becomes flexible by setting the display property to flex. This also allows "Edit" and "Save" to be displayed at the end of the container. display:flex; is a very essential part of this code block. */
+  margin: 16px 0; /* The "16px" moves "Edit" and "Search" down 16 pixels. The "0" moves the flex items (Edit and Search) to the right */
+}
+
+.buttonPrimary { /* THIS BLOCK OF CODE IS FOR THE "EDIT" BUTTON */
+  margin-left: 8px; /* The margin-left separates the "Edit" and "Save" button. */
+  background-color: green; /* This line changes the color of the button */
+  border: none; /* The button looks better without a border */
+  color: white; /* This line is for the color of the text inside the button */
+  padding: 8px 16px; /* This line is for sizing the button */
+}
+
+.buttonSecondary { /* THIS BLOCK OF CODE IS FOR THE "SAVE" BUTTON */
+  margin-left: 8px; /* The margin-left separates the "Edit" and "Save" button. margin-left is required on both .buttonPrimary and .buttonSecondary */
+  background-color: blue; /* This line changes the color of the button */
+  border: none; /* The button doesn't need a border */
+  color: white; /* This line is for the color of the text inside the button */
+  padding: 8px 16px; /* This line is for sizing the button */
+}
+
+.contentContainer { /* The .contentContainer contains the entire table and the search parameters and as well as the "Edit" and "Save" buttons inside a container. */
+  display: flex; /* The display:flex allows the search parameters to be centered. Without the display:flex the search parameters would be pushed to the very left side of the page */
+  flex-direction: column; /* Without the flex-direction the search parameters would be pushed to the left side of the table. With the current code in place the search paramters are on top of the table */
+  padding: 24px; /* This padding allows the table to be centered */
+}
+
+.criteria { /* .criteria is the search parameter and this whole block of code is for the search parameter */
+  padding-top: 5px; /* padding-top provides spacing between the search parameter and the header. padding-top provides a layer of padding above the search parameter which indirectly pushes it downwards */
+  padding-bottom: 5px; /* padding-bottom provides spacing between the search parameter and the table. padding-bottom provides a layer of padding below the search parameter which indirectly pushes the table further down */
+  display: flex; /* display:flex allows the buttons to be closer together */
+  flex-direction: row; /* The flex-direction:row allows the search parameter to be in a flex container and also to be displayed as a row */
+  align-items: center; /* align-items allows the search parameters to be more centered and lower from the header */
+}
+
+select { /* This block of code is for the two drop down menus in the search parameter */
+  padding: 6px; /* padding: 6px provides padding for the two drop down menus in the search parameter */
+}
+
+.form { /*.form class provides spacing in between the drop down menus and input field */
+  padding-left: 10px; /* padding-left provides the spacing in between the drop down menus and input field */
+}
+
+.searchForm { /* This block of code is also for the search parameter */
+  margin: auto; /* The margin should be left at auto because it helps center the search parameters position */
+ /* text-align: center; */
+}
+
+.form-input-container { /* This block of code provides a padding container below the search parameter container */
+    /*padding-top: 40px; This drops the search paramter further down from the header*/
+    padding-bottom: 40px; /* padding-bottom provides padding below the search parameter container which indirectly creates space between the search parameters and the data table */
+}
+
+.addButton { /* .addButton is the "+" (plus sign) at the very right of the search parameter */
+  padding: 6px; /* padding: 6px is the perfect amount of padding because it is even with rest of the search parameter items. padding increases the size of the + button */
+  border: 1px solid black; /* border provides a black border around the "+" button */
+  background: none; /* background must have the value "none" otherwise the background color of the button would be gray */
+}
+
+.remove-item { /* .remove-item is the "-" (minus sign) and it only appears when a search parameter has been added */
+    margin-left: 5px; /* margin-left separates the "-" from the input field */
+    padding: 5px; /* padding in this instance controls the overall size of "-" */
+    color:black; /* color controls the color of the "-" */
+    font-weight: bold; 
+    cursor: pointer;
+    border: 1px solid black; /* border provides a black border around the "-" button */
+}
+
+input[type="submit"] { /* This is the input box inside the Search Parameter that has "search for report..." written inside of it */
+  margin: auto;
+  padding: 6px;
+}
+
+#searchVal { /* #searchVal is is the input box inside the Search Parameter where a user will type key words for querying information. In other words its the box that has "search for report..." written inside of it */
+  padding: 6px; /* This controls the size of the input field box */
+}
+/* Body, Buttons, and the Search Parameter ends here */
+
+/* Footer*//* -The Footer has been commented out because ??????.com could have a pre-built footer.... if not the below section is a footer that could be used for the web application
+  footer {
+  background-color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.footerLogo {
+  height: 5%;
+  width: 5%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 70px;
+}
+*:before,
+*:after {
+ box-sizing: border-box;
+}
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+.main-container {
+ min-height: 100vh; /* will cover the 100% of viewport 
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px; /* height of your footer 
+}
+footer {
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+}
+*/
+
+
+
+/* Table Begins Here */
+
+table { /* This block of code controls the visual appearance of the table */
+  font-family: arial, sans-serif; /* font-family controls the font of the characters in the table. Arial Sans-Serif is an excellent font for users to view */
+  border-collapse: collapse;
+  width: 100%;
+  /*display: block;
+  overflow-x: auto;*/
+  white-space: nowrap;
+}
+
+.table-scroll {
+	position:relative;
+	max-width: 100%;
+	margin:auto;
+	overflow:hidden;
+	/*border:1px solid #000;*/
+}
+
+.table-wrap {
+	width:100%;
+	overflow: auto; /* This line allows the table to have a horizontal scrollbar */
+}
+
+table-scroll table {
+	width:100%;
+	margin:auto;
+	border-collapse: collapse;
+	border-spacing: 0; /* This line provides borders for the table cells which helps with discerning the data */
+}
+
+.table-scroll th, .table-scroll td {
+	padding:5px 10px;
+  border: 1px solid #000;
+	/* background:#fff; */
+	white-space:nowrap;
+	/* vertical-align:top; */
+}
+
+.clone {
+	position:absolute;
+	top:0;
+	left:0;
+	pointer-events:none;
+}
+
+.clone th, .clone td {
+	visibility:hidden
+}
+
+/* This changes the border of the First Child
+.clone td, .clone th {
+	border-color:transparent
+}
+*/
+
+.clone tbody th {
+	visibility:visible;
+	color:blue;
+}
+
+.clone .fixed-side {
+	/*border:1px solid #000;*/ /*This adds a black border*/
+	background:rgb(255, 255, 255); /*This changes the background color of the first child*/
+  visibility:visible;
+  color: blue;
+}
+
+.clone thead, .clone tfoot{background:transparent;}
+
+.tableBody{
+  text-align: center; /* for td to be centered */
+}
+table tbody tr:nth-child(odd) {
+  color: black;
+}
+
+.tableBody tr:nth-child(even) {
+  background: rgba(0,0,0,0.1);
+  color: black;
+}
+
+.tableBody tr td { /* This block of code will style the entire table */
+  padding: 15px; /* This line provides padding for each cell */
+  text-align: center; /* This line centers the text inside the cell */
+  font-weight: bold; /* This line bolds the text inside the cell */
+}
+
+
+/* Pop Up Box and More Buttons */
+
+form .searchButton { /* form .searchButton is the "Search" button in the Search Parameter */
+  margin: 10px; /* This line is very important because it allows the "Search" button to be spaced away from "+" button and the input box */
+  border: 1px solid green; /* This line is also very important because it allows the "Search" button to be equal size with the other items in the Search Parameter */
+}
+
+.popUpSaveCheck { /* .popUpSaveCheck is the pop up box that appears when you hit the "Save" button and inside the box it will say "Are you sure" and it will also have the "Cancel" and "Save" button */
+  display: none;
+  background: white; /* This line controls the background color of the "Are you sure" box */
+  padding: 20px; /* This line provides padding inside the pop up box and it can indirectly increase or decrease the size of the pop up box */
+  border: 1px solid black; /* This line provides a black border and also provides the overall box shape */
+  text-align: center; /* This line will center the "Cancel" and "Save" buttons */
+  max-width: 400px;
+  margin: 0 auto; /* This allows the pop up box to be centered on the page. Without this line the pop up box would be pushed to the very left side of the page */
+}
+
+#saveBtn { /* #saveBTN is the "Save" button that appears inside the "Are you sure" box when you hit the "Save" button */
+  border: none; /* This removes the border wrapping the button.*/
+  color: white; /* This line controls the text color of "Save" */
+  background: blue; /* This line controls the background color of the "Save" button */
+  padding: 8px 15px; /* The padding is used to control the overall size of the button */
+}
+
+#cancelBtn { /* #cancelBtn is the "Cancel" button that appears inside the "Are you sure" box when you hit the "Save" button */
+  border: none; /* This removes the border wrapping the button */
+  color: white; /* This line controls the text color of "Cancel" */
+  background: green; /* This line controls the background color of the "Cancel" button */
+  padding: 8px 15px; /* The padding is used to control the overall size of the button */
+}
+
+.radio_table_edit {
+  margin-top: 15px; /* radio btn centered vertically*/
+} 
+/* Pop Up Box and More Buttons Ends Here */
