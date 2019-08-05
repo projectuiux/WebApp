@@ -1,3 +1,4 @@
+    
 /* header */
 
 .header {
@@ -239,14 +240,19 @@ form .searchButton { /* form .searchButton is the "Search" button in the Search 
 
 .popUpSaveCheck { /* .popUpSaveCheck is the pop up box that appears when you hit the "Save" button and inside the box it will say "Are you sure" and it will also have the "Cancel" and "Save" button */
   display: none;
+  opacity: 1;
+  z-index: 9999;
+  position: fixed;
   background: white; /* This line controls the background color of the "Are you sure" box */
   padding: 20px; /* This line provides padding inside the pop up box and it can indirectly increase or decrease the size of the pop up box */
   border: 1px solid black; /* This line provides a black border and also provides the overall box shape */
   text-align: center; /* This line will center the "Cancel" and "Save" buttons */
   max-width: 400px;
-  margin: 0 auto; /* This allows the pop up box to be centered on the page. Without this line the pop up box would be pushed to the very left side of the page */
+  /*margin: 0 auto; /* This allows the pop up box to be centered on the page. Without this line the pop up box would be pushed to the very left side of the page */
+  left: 50%;
+  margin-left: -200px;
+  box-shadow: 2px 2px 5px #222;
 }
-
 #saveBtn { /* #saveBTN is the "Save" button that appears inside the "Are you sure" box when you hit the "Save" button */
   border: none; /* This removes the border wrapping the button.*/
   color: white; /* This line controls the text color of "Save" */
@@ -261,7 +267,6 @@ form .searchButton { /* form .searchButton is the "Search" button in the Search 
   padding: 8px 15px; /* The padding is used to control the overall size of the button */
 }
 
-.radio_table_edit {
+.radio_table_edit{
   margin-top: 15px; /* radio btn centered vertically*/
-} 
-/* Pop Up Box and More Buttons Ends Here */
+}
