@@ -13,20 +13,21 @@
   <div id="header" class="header">
       <img id="logo" src="arrow-logo-white.png" class="arrowLogo">
   </div>
+  
+  <div class="container center">
+    <!---- "popUpSaveCheck" is a pop up box that appears when you hit the "Save" button and it double checks if you would actually
+          like to save the changes made to the data table -->
+    <span id="popUpSaveCheck" class="popUpSaveCheck">
+      <h3>Are you sure you would like to save?</h3> <!-- <h3> tag displays the message in the pop up box -->
+        <div class="container-save-btns">
+          <button id="cancelBtn">Cancel</button><!-- This is the "Cancel" button in the pop up box which would cancel the changes made to the data table -->
+          <button id="saveBtn">Save</button><!-- This is the "Save" button in the pop up box which will confirm the changes made to the data table -->
+        </div>
+     </span>
+  </div>
 
   <!---- Content Container contains the Search Parameter, the data table, and the "Edit" and "Save" buttons ---->
   <div class="contentContainer">
-  
-  <!---- "popUpSaveCheck" is a pop up box that appears when you hit the "Save" button and it double checks if you would actually
-          like to save the changes made to the data table -->
-  <span id="popUpSaveCheck" class="popUpSaveCheck">
-    <h3>Are you sure you would like to save?</h3> <!-- <h3> tag displays the message in the pop up box -->
-    <div class="container-save-btns">
-      <button id="cancelBtn">Cancel</button><!-- This is the "Cancel" button in the pop up box which would cancel the changes made to the data table -->
-      <button id="saveBtn">Save</button><!-- This is the "Save" button in the pop up box which will confirm the changes made to the data table -->
-    </div>
-  </span>
-
   <form ng-controller="userCtrl" id="simpleForm" class="searchForm">
    <div class="container">
     <div id="searchDiv" class="form-input-container">
@@ -34,39 +35,39 @@
       
       <span id="keySelectDiv" class="form">
         <select name="key" class="itemList " >
-            <option value="partnerReportKey">Partner Report Key</option>
-            <option value="reportGroupType">Report Group Type</option>
-            <option value="reportFileName">Report File Name</option>
-            <option value="emailTo">Email To</option>
-            <option value="recordId">Report ID</option>
-            <option value="reportFrequency">Report Frequency</option>
-            <option value="reportTransmissionType">Report Transmission Type</option>
-            <option value="ccTo">CC To</option>
-            <option value="emailFrom">Email From</option>
-            <option value="emailSubject">Email Subject</option>
-            <option value="emailBody">Email Body</option>
-            <option value="emailServer">Email Server</option>
-            <option value="emailPort">Email Port</option>
-            <option value="ftpServer">FTP Server</option>
-            <option value="ftpUser">FTP User</option>
-            <option value="ftpPassword">FTP Password</option>
-            <option value="ftpEncodedPassword">FTP Encoded Password</option>
-            <option value="ftpPort">FTP Port</option>
-            <option value="ftp
+            <option value="Partner Report Key">Partner Report Key</option>
+            <option value="Report Group Type">Report Group Type</option>
+            <option value="Report File Name">Report File Name</option>
+            <option value="Email To">Email To</option>
+            <option value="Report ID">Report ID</option>
+            <option value="Report Frequency">Report Frequency</option>
+            <option value="Report Transmission Type">Report Transmission Type</option>
+            <option value="Cc To">CC To</option>
+            <option value="Email From">Email From</option>
+            <option value="Email Subject">Email Subject</option>
+            <option value="Email Body">Email Body</option>
+            <option value="Email Server">Email Server</option>
+            <option value="Email Port">Email Port</option>
+            <option value="Ftp Server">FTP Server</option>
+            <option value="Ftp User">FTP User</option>
+            <option value="Ftp Password">FTP Password</option>
+            <option value="Ftp EncodedPassword">FTP Encoded Password</option>
+            <option value="Ftp Port">FTP Port</option>
+            <option value="Ftp 
             Directory">FTP Directory</option>
-            <option value="enabledFlag">Enabled Flag</option>
-            <option value="disabledDate">Disabled Date</option>
-            <option value="creationDate">Creation Date</option>
-            <option value="createdBy">Created By</option>
-            <option value="lastUpdateDate">Last Update Date</option>
-            <option value="lastUpdateBy">Last Update By</option>
-            <option value="programUpdateDate">Program Update Date</option>
-            <option value="requestID">Request ID</option>
-            <option value="changeNotes">Change Notes</option>
-            <option value="businessApprover">Business Approver</option>
-            <option value="BIFolder">BI Folder</option>
-            <option value="BIPath">BI Path</option>
-            <option value="BIMainReportName">BI Main Report Name</option>
+            <option value="Enabled Flag">Enabled Flag</option>
+            <option value="Disabled Date">Disabled Date</option>
+            <option value="Creation Date">Creation Date</option>
+            <option value="Created By">Created By</option>
+            <option value="Last Update Date">Last Update Date</option>
+            <option value="Last Update By">Last Update By</option>
+            <option value="Program Update Date">Program Update Date</option>
+            <option value="Request ID">Request ID</option>
+            <option value="Change Notes">Change Notes</option>
+            <option value="Business Approver">Business Approver</option>
+            <option value="BI Folder">BI Folder</option>
+            <option value="BI Path">BI Path</option>
+            <option value="BI Main Report Name">BI Main Report Name</option>
         </select> 
       </span>
 
@@ -157,6 +158,7 @@
    <!-- javascript -->
  <script src="simple.js"></script>
  <script src="tableRender.js"></script>
+
 
 </body>
 </html>
