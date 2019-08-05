@@ -14,38 +14,38 @@ app.controller('userCtrl', function($scope, $http) {
     } else {
       var field = '<span id="keySelectDiv" class="form nextCriteria">' +
       '<select name="key">' +
-      '    <option value="partnerReportKey">Partner Report Key</option>' +
-      '    <option value="reportGroupType">Report Group Type</option>' +
-      '    <option value="reportFileName">Report File Name</option>' +
-      '    <option value="emailTo">Email To</option>' +
-      '    <option value="recordId">Report ID</option>' +
-      '    <option value="reportFrequency">Report Frequency</option>' +
-      '    <option value="reportTransmissionType">Report Transmission Type</option>' +
-      '        <option value="ccTo">CC To</option>' +
-      '        <option value="emailFrom">Email From</option>' +
-      '        <option value="emailSubject">Email Subject</option>' +
-      '        <option value="emailBody">Email Body</option>' +
-      '        <option value="emailServer">Email Server</option>' +
-      '        <option value="emailPort">Email Port</option>' +
-      '        <option value="ftpServer">FTP Server</option>' +
-      '        <option value="ftpUser">FTP User</option>' +
-      '        <option value="ftpPassword">FTP Password</option>' +
-      '        <option value="ftpEncodedPassword">FTP Encoded Password</option>' +
-      '        <option value="ftpPort">FTP Port</option>' +
-      '        <option value="ftpDirectory">FTP Directory</option>' +
-      '        <option value="enabledFlag">Enabled Flag</option>' +
-      '        <option value="disabledDate">Disabled Date</option>' +
-      '        <option value="creationDate">Creation Date</option>' +
-      '        <option value="createdBy">Created By</option>' +
-      '        <option value="lastUpdateDate">Last Update Date</option>' +
-      '        <option value="lastUpdateBy">Last Update By</option>' +
-      '        <option value="programUpdateDate">Program Update Date</option>' +
-      '        <option value="requestID">Request ID</option>' +
-      '        <option value="changeNotes">Change Notes</option>' +
-      '        <option value="businessApprover">Business Approver</option>' +
-      '        <option value="BIFolder">BI Folder</option>' +
-      '        <option value="BIPath">BI Path</option>' +
-      '        <option value="BIMainReportName">BI Main Report Name</option>' +
+      '    <option value="Partner Report Key">Partner Report Key</option>' +
+      '    <option value="Report Group Type">Report Group Type</option>' +
+      '    <option value="Report File Name">Report File Name</option>' +
+      '    <option value="Email To">Email To</option>' +
+      '    <option value="Report ID">Report ID</option>' +
+      '    <option value="Report Frequency">Report Frequency</option>' +
+      '    <option value="Report Transmission Type">Report Transmission Type</option>' +
+      '        <option value="CcTo">CC To</option>' +
+      '        <option value="Email From">Email From</option>' +
+      '        <option value="Email Subject">Email Subject</option>' +
+      '        <option value="Email Body">Email Body</option>' +
+      '        <option value="Email Server">Email Server</option>' +
+      '        <option value="Email Port">Email Port</option>' +
+      '        <option value="Ftp Server">FTP Server</option>' +
+      '        <option value="Ftp User">FTP User</option>' +
+      '        <option value="Ftp Password">FTP Password</option>' +
+      '        <option value="Ftp Encoded Password">FTP Encoded Password</option>' +
+      '        <option value="Ftp Port">FTP Port</option>' +
+      '        <option value="Ftp Directory">FTP Directory</option>' +
+      '        <option value="Enabled Flag">Enabled Flag</option>' +
+      '        <option value="Disabled Date">Disabled Date</option>' +
+      '        <option value="Creation Date">Creation Date</option>' +
+      '        <option value="Created By">Created By</option>' +
+      '        <option value="Last Update Date">Last Update Date</option>' +
+      '        <option value="Last Update By">Last Update By</option>' +
+      '        <option value="Program Update Date">Program Update Date</option>' +
+      '        <option value="Request ID">Request ID</option>' +
+      '        <option value="Change Notes">Change Notes</option>' +
+      '        <option value="Business Approver">Business Approver</option>' +
+      '        <option value="BI Folder">BI Folder</option>' +
+      '        <option value="BI Path">BI Path</option>' +
+      '        <option value="BI Main Report Name">BI Main Report Name</option>' +
       '</select>' +
       '</span>'   +
   
@@ -69,8 +69,13 @@ app.controller('userCtrl', function($scope, $http) {
       $.each( deleteButton, function(index, item){
         item.addEventListener('click', function(e){
           const inputRow = this.parentElement;
+
           // Remove element
-          this.parentNode.parentNode.removeChild(this.parentElement);
+          // dont error on null
+          if(this.parentNode.parentNode !== null){
+            this.parentNode.parentNode.removeChild(this.parentElement);
+          }
+          
         });
       });
     }
