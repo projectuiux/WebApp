@@ -1,17 +1,19 @@
 "use strict";
 
-var numCriteria = 1;
-var app = angular.module('myApp', []);
-app.controller('userCtrl', function($scope, $http) {
-  $http.get("config.php")
-  .then(function (response) {$scope.reports = response.data.records; console.log(response.data.records);});
+var numCriteria = 1; // user added input fields
+
+var app = angular.module('myApp', []); // declare angular app
+app.controller('userCtrl', function($scope, $http) { //angular controller
+  //$http.get("config.php") // request data from?
+  //.then(function (response) {$scope.reports = response.data.records; console.log(response.data.records);});
 
 
-  $scope.addField = function(){
+  $scope.addField = function(){ // User added field html
     //Check to see if there are 5 added input fields
     if($('.nextCriteria').length >= 4){
       // max additional input fields reached.. do nothing
     } else {
+      // set up input field html.
       var field = '<span id="keySelectDiv" class="form nextCriteria">' +
       '<select name="key">' +
       '    <option value="Partner Report Key">Partner Report Key</option>' +
@@ -48,23 +50,25 @@ app.controller('userCtrl', function($scope, $http) {
       '        <option value="BI Main Report Name">BI Main Report Name</option>' +
       '</select>' +
       '</span>'   +
-  
       '<span id="searchValDiv" class="form">' +
         '<input type="text" id="searchVal">' +
       '</span>' +
       '<span id="remove-button" class="remove-item">-</span>';
 
-
+      // create new Div element w/ js
       var container = document.createElement("div");
+      // enter input into html
       container.innerHTML = field;
 
+      // track number of input fields + 1 
       numCriteria += 1;
       
-      container.id = "criteria" + numCriteria;
+      container.id = "criteria" + numCriteria; // give each  element a unique id ex : `criteria1`, `criteria2`
+      // append to html
       $('#searchDiv').append('<div id="criteria' + numCriteria + '" class="criteria">' + field + '</div>');
       //document.getElementById("searchDiv").innerHTML += '<div id="criteria' + numCriteria + '">' + field + '</div>';
 
-      // remove button for each - symbol on the input fields
+      // remove button for each - remove symbol on the input fields
       let deleteButton = $('.remove-item');
       $.each( deleteButton, function(index, item){
         item.addEventListener('click', function(e){
@@ -82,6 +86,8 @@ app.controller('userCtrl', function($scope, $http) {
   } // End addField();
 });
 
+// wait until doc is ready to fire code..
 $(document).ready(function() {
+    // init # of input fields: default = 1
     numCriteria = 1;
 });
